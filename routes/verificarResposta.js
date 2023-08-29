@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/:resposta', (req, res) => {
-  const resposta = req.params.resposta;
-
+router.post('/', (req, res) => {
+  const resposta = req.body.resposta; 
+  console.log(resposta);
+ 
   if (resposta === 'sim') {
-    res.send('sucesso');
+    res.json({ message: 'sucesso' });
   } else {
-    res.send('erro');
+    res.json({ message: 'erro' });
   }
 });
+
 
 module.exports = router;
