@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-  const resposta = req.body.resposta; 
-  console.log(resposta);
- 
-  if (resposta === 'sim') {
+  const response = req.body.response; 
+
+  if (response === 'sim') {
     res.json({ message: 'sucesso' });
   } else {
     res.json({ message: 'erro' });
   }
+  
 });
 
 
